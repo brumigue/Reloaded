@@ -6,16 +6,11 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 03:36:20 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/11 05:20:41 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/11 06:14:21 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
