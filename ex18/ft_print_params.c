@@ -6,25 +6,42 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 03:36:20 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/11 03:38:05 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/11 05:20:41 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-ssize_t write(int fd, const void *buf, size_t count);
-
-int main(int argc, char *argv[])
+void	ft_putchar(char c)
 {
-    for (int i = 1; i < argc; i++)
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-        int j = 0;
-        while (argv[i][j] != '\0')
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
+int		main(int argc, char **argv)
+{
+	int j;
+
+	if (argc > 1)
+	{
+		j = 1;
+		while (j < argc)
 		{
-            write(1, &argv[i][j], 1);
-            j++;
-        }
-        write(1, "\n", 1);
-    }
-    return 0;
+			ft_putstr(argv[j]);
+			ft_putchar('\n');
+			j++;
+		}
+	}
+	return (0);
 }
