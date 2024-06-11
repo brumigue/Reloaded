@@ -1,2 +1,2 @@
 #!/bin/sh
-find . -type f -name "*.sh" -exec basename {} .sh \; | awk '{print $0"$"}'
+find . -type f -name "*.sh" | xargs basename -s .sh
