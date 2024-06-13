@@ -6,7 +6,7 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 23:19:37 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/11 23:31:32 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/13 23:47:39 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@ void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
-	int = i;
+	int	i;
+
 	i = 0;
 	while (str[i] != '\0')
 	{

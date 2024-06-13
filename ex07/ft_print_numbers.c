@@ -6,16 +6,20 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 00:53:54 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/11 06:12:41 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/13 23:46:31 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_is_negative(int n)
+void	ft_print_numbers(void)
 {
-	if (n < 0)
-		ft_putchar('N');
-	else
-		ft_putchar('P');
+	char	n;
+
+	n = '0';
+	while (n >= '0' && n <= '9')
+	{
+		ft_putchar(n);
+		n++;
+	}
 }
