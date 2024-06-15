@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 06:22:17 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/15 13:19:35 by brumigue         ###   ########.fr       */
+/*   Created: 2024/06/15 14:48:54 by brumigue          #+#    #+#             */
+/*   Updated: 2024/06/15 14:50:34 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 
-char	*ft_strdup(char *src)
+
+#ifndef FT_POINT_H
+# define FT_POINT_H
+
+typedef struct	s_point
 {
-	char			*res;
-	unsigned int	len;
-
-	len = 0;
-	while (src[len] != '\0')
-		len++;
-	res = (char *)malloc(sizeof(*res) * (len + 1));
-	len = 0;
-	while (src[len] != '\0')
-	{
-		res[len] = src[len];
-		len++;
-	}
-	res[len] = '\0';
-	return (res);
-}
+	int x;
+	int y;
+}				t_point;
+#endif
