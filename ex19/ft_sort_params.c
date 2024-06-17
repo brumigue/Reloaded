@@ -6,68 +6,61 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 23:49:37 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/18 00:17:44 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/18 00:58:16 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 void	ft_putchar(char c);
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
 
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (i == 0)
-	{
-		if (s1[j] != s2[j])
-			i = s1[j] - s2[j];
-		else if ((s1[j] == '\0') && (s2[j] == '\0'))
-			return (0);
-		else
-			i++;
-	}
-	return (i);
+	while ((s1[i] == s2[i]) && (s1[i] != '\0') && (s2[i] != '\0'))
+		i++;
+	return (s1[i] - s2[i]);
 }
 
-void	ft_aff(int argc, char **argv)
+void	ft_print_params(char **av)
 {
-	int	x;
+	int	i;
+	int	j;
 
-	x = 1;
-	while (x < argc)
+	i = 1;
+	while (av[i])
 	{
-		ft_putstr(argv[x]);
+		j = 0;
+		while (av[i][j])
+		{
+			ft_putchar(av[i][j]);
+			j++;
+		}
 		ft_putchar('\n');
-		x++;
+		i++;
 	}
 }
 
-int	main(nt argc, char **argv)
+int	main(int ac, char **av)
 {
 	int		i;
 	int		j;
-	char	*backup;
+	char	*temp;
 
-	if (argc > 1)
+	i = 1;
+	while (i < ac)
 	{
-		i = 1;
-		while (i < argc)
+		j = 1;
+		while (j < ac)
 		{
-			j = 1;
-			while (j < argc)
+			if (ft_strcmp(av[i], av[j]) < 0)
 			{
-				j = 1;
+				temp = av[i];
+				av[i] = av[j];
+				av[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+	ft_print_params(av);
+}

@@ -6,24 +6,21 @@
 #    By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/18 00:25:30 by brumigue          #+#    #+#              #
-#    Updated: 2024/06/18 00:25:36 by brumigue         ###   ########.fr        #
+#    Updated: 2024/06/18 00:59:02 by brumigue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+CFLAGS = -Wall -Wextra -Werror
+SOURCES = main.c
+DEST = ft_display_file
 
-NAME = ft_display_file
+all: compile
 
-SRC = ./ft_display_file.c
-
-FLAGS = -Wall -Wextra -Werror -g3
-
-all: $(NAME)
-	chmod 777 $(NAME)
-
-$(NAME):
-	gcc $(FLAGS) $(SRC) -o $(NAME)
+compile:
+	gcc $(CFLAGS) -o $(DEST) $(SOURCES)
 
 clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(DEST)
+
