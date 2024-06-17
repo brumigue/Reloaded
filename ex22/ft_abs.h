@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/11 03:08:44 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/18 00:14:34 by brumigue         ###   ########.fr       */
+/*   Created: 2024/06/15 14:45:51 by brumigue          #+#    #+#             */
+/*   Updated: 2024/06/15 14:49:11 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
-{
-	if ((nb > 0) && (nb < 13))
-	{
-		return (nb = nb * ft_recursive_factorial(nb - 1));
-	}
-	else if (nb == 0)
-	{
-		return (1);
-	}
-	return (0);
-}
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS(Value) ((Value < 0) ? -Value : Value)
+#endif

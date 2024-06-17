@@ -6,63 +6,61 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 23:49:37 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/15 06:21:18 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/18 00:58:16 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
 void	ft_putchar(char c);
 
-void	ft_putstr(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	while (*str)
-	{
-		ft_putchar(*str);
-		str++;
-	}
+	int	i;
+
+	i = 0;
+	while ((s1[i] == s2[i]) && (s1[i] != '\0') && (s2[i] != '\0'))
+		i++;
+	return (s1[i] - s2[i]);
 }
 
-void	ft_swap(char **a, char **b)
-{
-	char	*temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-void	ft_sort_params(int argc, char **argv)
+void	ft_print_params(char **av)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	while (i < argc - 1)
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			ft_putchar(av[i][j]);
+			j++;
+		}
+		ft_putchar('\n');
+		i++;
+	}
+}
+
+int	main(int ac, char **av)
+{
+	int		i;
+	int		j;
+	char	*temp;
+
+	i = 1;
+	while (i < ac)
 	{
 		j = 1;
-		while (j < argc - i)
+		while (j < ac)
 		{
-			if (argv[j][0] > argv[j + 1][0])
+			if (ft_strcmp(av[i], av[j]) < 0)
 			{
-				ft_swap(&argv[j], &argv[j + 1]);
+				temp = av[i];
+				av[i] = av[j];
+				av[j] = temp;
 			}
 			j++;
 		}
 		i++;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	int	i;
-
-	i = 1;
-	ft_sort_params(argc, argv);
-	while (i < argc)
-	{
-		ft_putstr(argv[i]);
-		ft_putchar('\n');
-		i++;
-	}
-	return (0);
+	ft_print_params(av);
 }
