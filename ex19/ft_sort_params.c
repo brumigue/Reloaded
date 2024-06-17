@@ -6,63 +6,68 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 23:49:37 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/15 06:21:18 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/18 00:17:44 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
 void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
-	while (*str)
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar(*str);
-		str++;
+		ft_putchar(str[i]);
+		i++;
 	}
 }
 
-void	ft_swap(char **a, char **b)
-{
-	char	*temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-void	ft_sort_params(int argc, char **argv)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	while (i < argc - 1)
+	i = 0;
+	j = 0;
+	while (i == 0)
 	{
-		j = 1;
-		while (j < argc - i)
-		{
-			if (argv[j][0] > argv[j + 1][0])
-			{
-				ft_swap(&argv[j], &argv[j + 1]);
-			}
-			j++;
-		}
-		i++;
+		if (s1[j] != s2[j])
+			i = s1[j] - s2[j];
+		else if ((s1[j] == '\0') && (s2[j] == '\0'))
+			return (0);
+		else
+			i++;
 	}
+	return (i);
 }
 
-int	main(int argc, char **argv)
+void	ft_aff(int argc, char **argv)
 {
-	int	i;
+	int	x;
 
-	i = 1;
-	ft_sort_params(argc, argv);
-	while (i < argc)
+	x = 1;
+	while (x < argc)
 	{
-		ft_putstr(argv[i]);
+		ft_putstr(argv[x]);
 		ft_putchar('\n');
-		i++;
+		x++;
 	}
-	return (0);
 }
+
+int	main(nt argc, char **argv)
+{
+	int		i;
+	int		j;
+	char	*backup;
+
+	if (argc > 1)
+	{
+		i = 1;
+		while (i < argc)
+		{
+			j = 1;
+			while (j < argc)
+			{
+				j = 1;
