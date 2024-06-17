@@ -6,10 +6,9 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 00:22:37 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/18 00:23:22 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/18 01:58:17 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 int	ft_count_if(char **tab, int (*f)(char*))
 {
 	int	i;

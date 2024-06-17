@@ -6,10 +6,9 @@
 /*   By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 00:20:09 by brumigue          #+#    #+#             */
-/*   Updated: 2024/06/18 00:22:13 by brumigue         ###   ########.fr       */
+/*   Updated: 2024/06/18 01:58:03 by brumigue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int	i;
