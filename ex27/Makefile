@@ -6,21 +6,19 @@
 #    By: brumigue <brumigue@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/18 00:25:30 by brumigue          #+#    #+#              #
-#    Updated: 2024/06/18 00:59:02 by brumigue         ###   ########.fr        #
+#    Updated: 2024/06/18 01:15:11 by brumigue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-CFLAGS = -Wall -Wextra -Werror
-SOURCES = main.c
-DEST = ft_display_file
+NAME = ft_display_file
+FILES = display_file.c
 
-all: compile
+.PHONY: all clean fclean
 
-compile:
-	gcc $(CFLAGS) -o $(DEST) $(SOURCES)
+all:
+	    @gcc -Wall -Wextra -Werror -o $(NAME) $(FILES)
 
 clean:
-	rm -f *.o
+	    @rm -f *.o
 
 fclean: clean
-	rm -f $(DEST)
-
+	    @rm -f $(NAME)
